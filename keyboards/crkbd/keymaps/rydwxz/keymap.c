@@ -19,9 +19,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #include <cstdint>
 #include QMK_KEYBOARD_H
 
-void keyboard_post_init_user(void) {
-    rgb_matrix_disable()
-}
+enum custom_keycodes {
+    ARROW = SAFE_RANGE,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+    case ARROW:
+        if (record->event.pressed) {
+            if (get_mods() == MOD_MASK_SHIFT) {
+                SEND_STRING("=>");
+            } else {
+                SEND_STRING("->");
+            }
+        } else {
+        }
+        break;
+    }
+    return true;
+};
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(

@@ -40,7 +40,7 @@ Add the following to your `config.h`:
 Add the following to your `keymap.c`:
 
 ```c
-void keyboard_post_init_user(void) {
+void keyboard_post_iit_user(void) {
     hd44780_init(true, true); // Show blinking cursor
     hd44780_puts_P(PSTR("Hello, world!\n"));
 }
