@@ -51,3 +51,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define RGB_MATRIX_DEFAULT_ON false // Sets the default enabled state, if none has been set
 #define GBLIGHT_DEFAULT_ON false // Sets the default enabled state, if none has been set
+
+#define SPLIT_WATCHDOG_ENABLE true
